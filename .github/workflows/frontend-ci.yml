@@ -1,0 +1,45 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+
+jobs:
+  build-and-push:
+    name: Build and Push to ECR
+    runs-on: ubuntu-latest
+    environment: AWS
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        run: |
+          # Extract the short SHA from the full commit SHA
+          SHORT_SHA=$(echo $GITHUB_SHA | head -c 7)
+
+          # Tag the image with the short SHA and build it
+          docker build -t ${{ steps.login-ecr.outputs.registry }}/fitpro-frontend:$SHORT_SHA -f frontend/Dockerfile frontend
+
+          # Push the SHA-tagged image
+          docker push ${{ steps.login-ecr.outputs.registry }}/fitpro-frontend:$SHORT_SHA
+
+      - name: Output image name
+        run: |
+          echo "The ECR image name with commit hash is ${{ steps.login-ecr.outputs.registry }}/fitpro-frontend:$(echo $GITHUB_SHA | head -c 7)"

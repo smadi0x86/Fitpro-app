@@ -1,0 +1,80 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+
+jobs:
+  build-and-push:
+    name: Build and Push to ECR
+    runs-on: ubuntu-latest
+    environment: AWS
+
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: mydb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Get Short SHA
+        id: slug
+        run: echo "::set-output name=sha7::$(git rev-parse --short HEAD)"
+
+      - name: Set up PHP environment
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, openswoole
+          coverage: none
+
+      - name: Create .env file for Backend
+        run: |
+          echo "DB_HOST=localhost" > backend/.env
+          echo "DB_PORT=5432" >> backend/.env
+          echo "DB_DATABASE=mydb" >> backend/.env
+          echo "DB_USERNAME=postgres" >> backend/.env
+          echo "DB_PASSWORD=postgres" >> backend/.env
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> backend/.env
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress
+        working-directory: ./backend
+
+      - name: Run Tests
+        run: ./vendor/bin/pest tests
+        working-directory: ./backend
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        run: |
+          COMMIT_HASH=${{ steps.slug.outputs.sha7 }}
+          IMAGE_TAG=${{ steps.login-ecr.outputs.registry }}/fitpro-backend:$COMMIT_HASH
+          docker build -t $IMAGE_TAG -f backend/Dockerfile backend
+          docker push $IMAGE_TAG
+          echo "The ECR image name is $IMAGE_TAG"
