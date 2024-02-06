@@ -51,8 +51,6 @@
 - **AWS EKS:** Provides a managed Kubernetes service for running the containers, ensuring high availability and scalability.
 - **AWS Route53 & Certificate Manager:** Integrates DNS management with SSL/TLS encryption, establishing a secure and trusted domain for the application.
 
-**Note: Terraform EKS Configuration is confidential and not uploaded to this repository.**
-
 ### Monitoring & Observability:
 
 - **Grafana and Prometheus:** Delivers a comprehensive monitoring solution, providing insights into application performance and health metrics.
