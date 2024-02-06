@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitpro | Shop</title>
+    <link rel="stylesheet" href="./scss/shop.scss">
+    <link rel="icon" href="./assets/images/logo.png" type="image/png">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header id="navbar">
+    </header>
+
+    <div class="basket-container">
+        <a href="cart.html" id="basket-link">
+            <img src="./assets/images/cart.png" alt="Basket" style="width: 30px; height: auto;">
+            <span id="basket-count"
+                style="background-color: #ff0000; color: #ffffff; border-radius: 50%; padding: 0.25rem 0.5rem; font-size: 0.9rem; position: absolute; top: -10px; right: -10px; min-width: 20px; text-align: center;">0</span>
+        </a>
+    </div>
+
+    <main id="main-content" style="padding-top: 60px;">
+        <section class="container py-5">
+            <h1 class="text-center mb-4"
+                style="color: #0056b3;   color: #0056b3; font-size: 3rem; margin-bottom: 2rem;">Fitpro Shop</h1>
+            <div class="row">
+                <!-- Product Card 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/yoga_mat_shop.png" class="card-img-top" alt="Eco-Friendly Yoga Mat">
+                        <div class="card-body">
+                            <h5 class="card-title">Eco-Friendly Yoga Mat</h5>
+                            <p class="card-text">High-quality, sustainable yoga mat for the environmentally conscious.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$35.00</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Eco-Friendly Yoga Mat"
+                                    data-product-price="35.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/fitband.jpg" class="card-img-top" alt="Fitness Band">
+                        <div class="card-body">
+                            <h5 class="card-title">Fitness Band</h5>
+                            <p class="card-text">Keep track of your fitness goals with our durable and stylish fitness
+                                band.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$49.99</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Fitness Band"
+                                    data-product-price="49.99">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/runshoes.png" class="card-img-top" alt="Running Shoes">
+                        <div class="card-body">
+                            <h5 class="card-title">Running Shoes</h5>
+                            <p class="card-text">Experience unmatched comfort and performance with our running shoes.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$75.00</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Running Shoes"
+                                    data-product-price="75.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/waterbottle.jpg" class="card-img-top" alt="Water Bottle">
+                        <div class="card-body">
+                            <h5 class="card-title">Water Bottle</h5>
+                            <p class="card-text">Stay hydrated with our eco-friendly and leak-proof water bottle.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$20.00</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Water Bottle"
+                                    data-product-price="20.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 5 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/liftinggloves.png" class="card-img-top" alt="Weightlifting Gloves">
+                        <div class="card-body">
+                            <h5 class="card-title">Weightlifting Gloves</h5>
+                            <p class="card-text">Improve grip and protect your hands with our durable weightlifting
+                                gloves.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$25.00</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Weightlifting Gloves"
+                                    data-product-price="25.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/proteinshaker.jpg" class="card-img-top" alt="Protein Shaker Bottle">
+                        <div class="card-body">
+                            <h5 class="card-title">Protein Shaker Bottle</h5>
+                            <p class="card-text">Mix your protein shakes on the go with our leak-proof shaker bottle.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$15.00</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Protein Shaker Bottle"
+                                    data-product-price="15.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/resistance bands'.png" class="card-img-top"
+                            alt="Resistance Bands Set">
+                        <div class="card-body">
+                            <h5 class="card-title">Resistance Bands Set</h5>
+                            <p class="card-text">Versatile resistance bands for a variety of workouts, perfect for home
+                                or travel.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$30.00</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Resistance Bands Set"
+                                    data-product-price="30.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 8 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card product-card">
+                        <img src="./assets/images/rope.jpg" class="card-img-top" alt="High-Quality Skipping Rope">
+                        <div class="card-body">
+                            <h5 class="card-title">High-Quality Skipping Rope</h5>
+                            <p class="card-text">Enhance your cardio workouts with our adjustable and durable skipping
+                                rope.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$20.00</span>
+                                <button class="btn btn-primary add-to-cart" data-product-id="Skipping Rope"
+                                    data-product-price="20.00">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/shop.js"></script>
+</body>
+
+</html>

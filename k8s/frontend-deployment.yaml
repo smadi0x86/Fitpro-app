@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-frontend
+  template:
+    metadata:
+      labels:
+        app: php-frontend
+    spec:
+      containers:
+        - name: php-frontend
+          image: 735341528488.dkr.ecr.us-east-1.amazonaws.com/fitpro-frontend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 1337
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+      imagePullSecrets:
+        - name: ecr-credentials

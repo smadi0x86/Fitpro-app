@@ -1,0 +1,51 @@
+.services-intro {
+  padding: 4rem 0;
+  background-color: #f7f7f7;
+  text-align: center;
+
+  h1 {
+    color: #0056b3;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+// Custom form styles
+form {
+  .form-label {
+    font-weight: 500;
+    color: #333;
+  }
+
+  .form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+
+    &:focus {
+      border-color: #0056b3;
+      box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+    }
+  }
+
+  .btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+
+    &:hover {
+      background-color: darken($color: #0056b3, $amount: 10%);
+      border-color: darken($color: #0056b3, $amount: 10%);
+    }
+  }
+}
+
+// Responsive grid adjustments
+@media (max-width: 768px) {
+  .services-intro {
+    padding: 2rem 1rem;
+  }
+}

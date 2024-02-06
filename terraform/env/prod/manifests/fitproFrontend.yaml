@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fitpro-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fitpro-app
+  template:
+    metadata:
+      labels:
+        app: fitpro-app
+    spec:
+      containers:
+        - name: fitpro-app
+          image: 735341528488.dkr.ecr.us-east-1.amazonaws.com/fitpro-frontend:3b06d8f
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fitpro-app
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: fitpro.smadi0x86.me
+spec:
+  selector:
+    app: fitpro-app
+  ports:
+    - port: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fitpro-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: fitpro.smadi0x86.me
+      http:
+        paths:
+          # - path: /api/register
+          #   pathType: Prefix
+          #   backend:
+          #     service:
+          #       name: php-backend-service
+          #       port:
+          #         number: 9501
+          - path: /api/
+            pathType: Prefix
+            backend:
+              service:
+                name: php-backend-service
+                port:
+                  number: 9501
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: fitpro-app
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - fitpro.smadi0x86.me
+      secretName: fitpro-tls

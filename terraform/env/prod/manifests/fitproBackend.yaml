@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-backend
+  template:
+    metadata:
+      labels:
+        app: php-backend
+    spec:
+      containers:
+        - name: php-backend
+          image: 735341528488.dkr.ecr.us-east-1.amazonaws.com/fitpro-backend:956a40c
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9501
+          volumeMounts:
+            - name: env-config
+              mountPath: /usr/src/app/.env
+              subPath: .env
+            - name: sendgrid-config
+              mountPath: /usr/src/app/sendgrid.env
+              subPath: sendgrid.env
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+      volumes:
+        - name: env-config
+          configMap:
+            name: php-backend-config
+        - name: sendgrid-config
+          configMap:
+            name: sendgrid-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-backend-service
+spec:
+  selector:
+    app: php-backend
+  ports:
+    - protocol: TCP
+      port: 9501
+      targetPort: 9501
+  type: ClusterIP

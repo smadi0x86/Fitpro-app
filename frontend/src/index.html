@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fitpro | Be Fit</title>
+  <link rel="stylesheet" href="./scss/styles.scss">
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header id="navbar"></header>
+  <main id="main-content">
+    <section id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./assets/images/fit1.jpg" class="d-block w-100" alt="Landing Image">
+          <div class="carousel-caption-custom">
+            <h1>Sweat. Smile. Repeat.</h1>
+            <div class="button-group">
+              <button type="button" class="btn btn-primary btn-md" onclick="document.location='register.html'">Get
+                Started</button>
+              <button type="button" class="btn btn-secondary btn-md" onclick="document.location='membership.html'">Join
+                Us</button>
+            </div>
+          </div>
+    </section>
+    <!-- Blog, Shop, Services Sections (Cards) -->
+    <div class="container my-5 cards-container">
+      <div class="row">
+        <div class="col-md-4 d-flex align-items-stretch">
+          <div class="card">
+            <img src="./assets/images/fitblog.png" class="card-img-top" alt="Blog">
+            <div class="card-body">
+              <h5 class="card-title">Blog</h5>
+              <p class="card-text">Latest fitness trends and insights.</p>
+              <a href="company.html" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-stretch">
+          <div class="card">
+            <img src="./assets/images/fitshop.png" class="card-img-top" alt="Shop">
+            <div class="card-body">
+              <h5 class="card-title">Shop</h5>
+              <p class="card-text">High-quality gear for your fitness needs.</p>
+              <a href="shop.html" class="btn btn-primary">Shop Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-stretch">
+          <div class="card">
+            <img src="./assets/images/fitservices.png" class="card-img-top" alt="Services">
+            <div class="card-body">
+              <h5 class="card-title">Services</h5>
+              <p class="card-text">Personalized training and nutrition plans.</p>
+              <a href="services.html" class="btn btn-primary">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Trusted By (Logos and Brands) Section -->
+    <div class="container my-5 trusted-by-section">
+      <h2 class="text-center mb-4">Trusted By</h2>
+      <div class="d-flex justify-content-center">
+        <img src="./assets/images/puma.png" class="mx-4" alt="Brand 2">
+        <img src="./assets/images/nike.png" class=" mx-4" alt="Brand 1">
+        <img src="./assets/images/goldgym.png" class="mx-4" alt="Brand 3">
+      </div>
+    </div>
+    <!-- Call to Action Section with Color Background -->
+    <div class="call-to-action-section py-5">
+      <div class="container">
+        <h2 class="text-center text-uppercase font-weight-bold mb-3">Join the Fitpro Family</h2>
+        <p class="lead text-center mb-4">Commit to be fit. Transform your life today.</p>
+        <div class="d-flex justify-content-center">
+          <a href="company.html" class="btn btn-lg btn-primary mx-2">About Us</a>
+          <a href="register.html" class="btn btn-lg btn-warning mx-2">Register</a>
+          <a href="company.html" class="btn btn-lg btn-light mx-2">Why Fitpro?</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <footer id="footer"></footer>
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>

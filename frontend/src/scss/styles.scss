@@ -1,0 +1,71 @@
+// Import Bootstrap functions to use mixins and variables
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Define your color scheme
+$primary-color: #0056b3; // Primary color for your site
+$secondary-color: #6c757d; // Secondary color for your site
+$background-color: #f8f9fa; // Background color for your site
+$font-color: #333333; // Main font color for your site
+$link-color: $primary-color; // Color for all text links
+
+// Typography settings
+$heading-font-family: "Oswald", sans-serif; // Bold font for headings
+$body-font-family: "Open Sans", sans-serif; // Readable font for body text
+
+// Body and typography styles
+body {
+  font-family: $body-font-family;
+  color: $font-color;
+  background-color: $background-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  color: $primary-color;
+}
+
+.navlink i {
+  font-size: 2rem;
+}
+
+a {
+  color: $link-color;
+  &:hover {
+    color: darken($link-color, 10%);
+  }
+}
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the scroll thumb */
+  border-radius: 6px; /* roundness of the scroll thumb */
+  border: 3px solid #f1f1f1; /* creates padding around scroll thumb */
+}
+
+/* When hovering over the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color of the scroll thumb on hover */
+}
+
+// Import repeated shared styles
+@import "navbar";
+@import "main";
+@import "footer";
+
+// Finally, import Bootstrap styles
+@import "bootstrap/scss/bootstrap";

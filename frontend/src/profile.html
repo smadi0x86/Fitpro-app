@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | Fitpro</title>
+    <link rel="stylesheet" href="./scss/styles.scss">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .profile-image-placeholder {
+            flex-basis: 20%;
+            text-align: center;
+        }
+
+        .profile-image-placeholder img {
+            max-width: 80%;
+            border-radius: 50%;
+        }
+
+        .membership-info {
+            flex-basis: 75%;
+            text-align: left;
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .profile-info input,
+        .profile-info button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .profile-info button {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .profile-info button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar"></header>
+
+    <div class="container">
+        <div class="profile-top">
+            <div class="profile-image-placeholder">
+                <img src="./assets/images/user.png" alt="Profile Image">
+            </div>
+            <div class="membership-info">
+                <h2>Membership</h2>
+                <p id="membershipLevel">Basic</p>
+            </div>
+        </div>
+        <div class="profile-info">
+            <input type="email" id="email" placeholder="Email" disabled>
+        </div>
+    </div>
+    <!-- Change Password Form -->
+    <div class="container">
+        <div class="profile-info">
+            <h3>Change Password</h3>
+            <form id="changePasswordForm">
+                <input type="password" id="currentPassword" name="currentPassword" placeholder="Current Password"
+                    required>
+                <input type="password" id="newPassword" name="newPassword" placeholder="New Password" required>
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword"
+                    placeholder="Confirm New Password" required>
+                <button type="submit" id="changePasswordButton">Change Password</button>
+            </form>
+            <p id="passwordChangeMessage"></p>
+        </div>
+    </div>
+    <!-- Persist user data across sessions without having to re-fetch it from the server -->
+    <script>
+        document.getElementById('email').value = localStorage.getItem('email') || 'Not set';
+    </script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/changepass.js"></script>
+</body>
+
+</html>

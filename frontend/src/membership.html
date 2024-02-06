@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitpro | Membership</title>
+    <link rel="stylesheet" href="./scss/membership.scss">
+    <link rel="icon" href="./assets/images/logo.png" type="image/png">
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="description" content="Fitpro Gym Membership">
+</head>
+
+<body>
+    <header id="navbar"></header>
+
+    <main id="main-content">
+        <section class="membership-intro">
+            <div class="container text-center">
+                <h1>Become a Fitpro member</h1>
+            </div>
+        </section>
+
+        <section class="membership-options py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Membership Options</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- Basic Plan -->
+                    <div class="col">
+                        <div class="card h-100 basic-plan">
+                            <div class="card-body">
+                                <h5 class="card-title">Basic</h5>
+                                <p class="card-price">$4.99 / Month</p>
+                                <li class="included">Access to gym facilities</li>
+                                <li class="not-included">Equipment access</li>
+
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary select-membership"
+                                    data-membership-type="Basic">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Associate Plan -->
+                    <div class="col">
+                        <div class="card h-100 associate-plan">
+                            <div class="card-body">
+                                <h5 class="card-title">Associate</h5>
+                                <p class="card-price">$9.99 / Month</p>
+                                <li class="included">Access to gym facilities</li>
+                                <li class="included">Group classes</li>
+                                <li class="not-included">Equipment access</li>
+                                <li class="not-included">Wellness programs</li>
+                                <li class="not-included">Spa access</li>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary select-membership"
+                                    data-membership-type="Associate">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Professional Plan -->
+                    <div class="col">
+                        <div class="card h-100 professional-plan">
+                            <div class="card-body">
+                                <h5 class="card-title">Professional</h5>
+                                <p class="card-price">$19.99 / Month</p>
+                                <p class="card-text">All-inclusive with personal training and spa access.</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary select-membership"
+                                    data-membership-type="Professional">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <section class="membership-actions py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <button id="get-membership-details" class="btn btn-info">Get Membership Details</button>
+                    <div id="membership-details" class="membership-details mt-4"></div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6 mb-3">
+                    <input type="text" id="new-membership-type" placeholder="New Membership Type" class="form-control">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="date" id="new-subscription-end-date" placeholder="New Subscription End Date"
+                        class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <button id="update-membership" class="btn btn-primary">Update Membership</button>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <button id="delete-membership" class="btn btn-danger">Delete Membership</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!-- Scripts for Membership Operations -->
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./api/membership.js"></script>
+</body>
+
+</html>

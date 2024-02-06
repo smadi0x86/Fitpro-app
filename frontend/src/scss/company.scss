@@ -1,0 +1,68 @@
+.about-us-section {
+  background-color: #fff; // White background for the about section
+  h1,
+  h2 {
+    color: #0056b3; // Fitpro brand color for headings
+    font-size: 3rem; // Large font size for main heading
+    margin-bottom: 1rem; // Space below the heading
+  }
+  p {
+    font-size: 1.25rem; // Slightly larger font size for readability
+    margin-bottom: 1rem; // Space below the paragraph
+  }
+  .btn-primary {
+    background-color: #0056b3; // Fitpro brand color for buttons
+    &:hover {
+      background-color: darken(
+        $color: #0056b3,
+        $amount: 10%
+      ); // Darken on hover for interaction feedback
+    }
+  }
+}
+
+// Blog Section
+.blog-section {
+  .card {
+    border: none; // Remove default card border
+    transition: transform 0.3s ease; // Smooth transition for hover effect
+    &:hover {
+      transform: translateY(
+        -5px
+      ); // Lift card on hover for an interactive effect
+    }
+  }
+  .card-img-top {
+    height: 200px; // Fixed height for images
+    object-fit: cover; // Ensure images cover the card area
+  }
+  .card-title {
+    color: #0056b3; // Fitpro brand color for blog titles
+  }
+  .card-text {
+    font-size: 1rem; // Standard font size for blog excerpt
+  }
+  .btn-primary {
+    background-color: #0056b3;
+    &:hover {
+      background-color: darken($color: #0056b3, $amount: 10%);
+    }
+  }
+}
+
+// FAQ Section
+.faq-section {
+  .accordion-button {
+    &:not(.collapsed) {
+      color: #0056b3; // Fitpro brand color for active accordion header
+      background-color: lighten(
+        $color: #0056b3,
+        $amount: 40%
+      ); // Lightened brand color for background
+    }
+  }
+
+  .accordion-body {
+    font-size: 1rem; // Standard font size for FAQ answers
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "smadi0x86wsl/backend",
+  "type": "project",
+  "license": "GNU",
+  "autoload": {
+    "psr-4": {
+      "Smadi0x86wsl\\Backend\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "smadi0x86",
+      "email": "smadixd@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "zircote/swagger-php": "^4.7",
+    "openswoole/core": "^22.1",
+    "vlucas/phpdotenv": "^5.6",
+    "monolog/monolog": "^3.5",
+    "phpmailer/phpmailer": "^6.9",
+    "firebase/php-jwt": "^6.10",
+    "stripe/stripe-php": "^13.7",
+    "sendgrid/sendgrid": "^8.1"
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.28",
+    "mockery/mockery": "^1.6",
+    "phpunit/phpunit": "10.5.3 as 10.5.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "composer/package-versions-deprecated": true
+    }
+  }
+}

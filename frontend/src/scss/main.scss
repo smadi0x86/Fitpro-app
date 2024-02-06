@@ -1,0 +1,128 @@
+.carousel-item {
+  position: relative;
+  text-align: left;
+
+  .carousel-caption-custom {
+    position: absolute;
+    bottom: 33%;
+    left: 10%;
+    text-align: left;
+
+    h1 {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #87ceeb;
+      margin-bottom: 1rem; // Space between text and buttons
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-left: 15rem; // move buttons to the right
+
+      button {
+        margin-bottom: 4rem;
+        margin-right: 1rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  // Responsive adjustments for smaller screens
+  @media (max-width: 768px) {
+    .carousel-caption-custom {
+      bottom: 25%;
+      left: 8.5%;
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .button-group {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-left: 2rem; // move buttons to the right for smaller screens
+
+        button {
+          margin-bottom: 0.5rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+// Cards container
+.cards-container {
+  margin-top: 3rem; // Adjust the top margin for spacing from the previous section
+  margin-bottom: 3rem; // Adjust the bottom margin for spacing from the next section
+}
+
+// Card styles
+.card {
+  margin: 1rem; // Add margin to create space around cards
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    transform: scale(1.05); // a slight zoom effect on hover
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .card-img-top {
+    height: 200px; // Set a fixed height for image consistency
+    object-fit: cover; // Ensure the image covers the area nicely
+  }
+
+  .card-body {
+    padding: 1.5rem; // Increase padding for more space inside the card
+  }
+
+  .card-title {
+    font-size: 1.5rem; // Increase title font size for emphasis
+    margin-bottom: 0.5rem; // Adjust the bottom margin for spacing
+  }
+
+  .card-text {
+    margin-bottom: 1.5rem; // Increase bottom margin for spacing above the button
+  }
+
+  .btn {
+    font-size: 1rem; // Adjust button font size if needed
+  }
+}
+
+// Trusted By section
+.trusted-by-section {
+  margin-top: 3rem; // Adjust top margin for spacing from the previous section
+  margin-bottom: 3rem; // Adjust bottom margin for spacing from the next section
+  text-align: center; // Center align the content
+}
+
+.trusted-by-section img {
+  height: 80px;
+  width: auto;
+  margin-top: 20px;
+}
+
+// Call to Action section
+.call-to-action-section {
+  background-color: #0056b3; // Your chosen color
+  padding: 3rem 0; // Increase padding for more vertical space
+  color: #fff; // Text color for contrast
+
+  h2 {
+    margin-bottom: 1.5rem; // Adjust the bottom margin for spacing from the title to the text
+  }
+
+  p.lead {
+    margin-bottom: 2rem; // Adjust the bottom margin for spacing from the text to the buttons
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem; // Adjust button padding for size
+    margin: 0 0.5rem; // Adjust spacing between buttons
+    // Add custom styles for buttons if needed
+  }
+}

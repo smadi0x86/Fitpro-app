@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fitpro | Sign In</title>
+    <link rel="stylesheet" href="./scss/styles.scss">
+    <link rel="icon" href="./assets/images/logo.png" type="image/png">
+</head>
+
+<body>
+
+    <header id="navbar"></header>
+
+    <main id="main-content" class="d-flex justify-content-center align-items-center vh-100">
+        <div class="w-25">
+            <h2 class="text-center mb-4">Sign In</h2>
+            <form id="signInForm">
+                <div class="mb-3">
+                    <label for="signInEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="signInEmail" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3">
+                    <label for="signInPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="signInPassword" required>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign In</button>
+            </form>
+            <p class="mt-3 text-center">
+                Don't have an account? <a href="register.html">Register here</a>
+            </p>
+        </div>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./api/signin.js"></script>
+</body>
+
+</html>

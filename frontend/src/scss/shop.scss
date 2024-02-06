@@ -1,0 +1,110 @@
+// Base container styling for maximum width control.
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+// Fixed basket container at the top right of the viewport.
+.basket-container {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  z-index: 1050; // Ensure it's above other elements.
+
+  // Styling for the basket link.
+  a#basket-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    // Basket icon styles.
+    img {
+      width: 30px;
+      height: auto; // Maintain aspect ratio.
+    }
+
+    // Basket item count indicator styles.
+    span#basket-count {
+      background-color: #ff0000; // Bright red for visibility.
+      color: #ffffff; // White text for contrast.
+      border-radius: 50%; // Circular shape.
+      padding: 0.25rem 0.5rem; // Uniform padding.
+      font-size: 0.9rem; // Readable font size.
+      position: absolute; // Position relative to its parent.
+      top: -10px; // Slightly above the basket icon.
+      right: -10px; // Slightly to the right of the basket icon.
+      min-width: 20px; // Minimum width for single digits.
+      text-align: center; // Center the text within the circle.
+    }
+  }
+}
+
+// Card styles for each product.
+.product-card {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow for depth.
+  transition: all 0.3s ease; // Smooth transition for hover effect.
+
+  // Lift effect on hover to provide feedback.
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  // Image styling for product cards.
+  .card-img-top {
+    height: 200px;
+    object-fit: cover; // Cover the entire top area.
+    border-top-left-radius: 0.5rem; // Rounded corners at the top.
+    border-top-right-radius: 0.5rem;
+  }
+
+  // Body of the product card.
+  .card-body {
+    // Title styles for product name.
+    h5 {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    // Description styles for product info.
+    .card-text {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    // Price tag styles for product pricing.
+    .price {
+      font-weight: bold;
+      color: #0056b3; // Theme color for branding consistency.
+    }
+
+    // Button styles for adding product to cart.
+    .add-to-cart {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8rem;
+      line-height: 1;
+      border-radius: 0.375rem;
+      // Darken the button on hover for a subtle feedback.
+      &:hover {
+        background-color: darken(#0056b3, 10%);
+      }
+    }
+  }
+}
+
+// Responsive image sizing adjustments for different breakpoints.
+@media (max-width: 992px) {
+  .product-card .card-img-top {
+    height: 180px; // Slightly smaller image for tablet devices.
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card .card-img-top {
+    height: 160px; // Even smaller image for mobile devices.
+  }
+}
