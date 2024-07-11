@@ -4,14 +4,8 @@
 <img src="https://github.com/smadi0x86/Fitpro-app/assets/75253629/fbe172bd-0b59-40cf-89c2-87c8eaa814f2">
 </div>
 
-<p align="center">
-  <a href="https://github.com/smadi0x86/Website-D-D-Final/actions/workflows/backend-ci.yml">
-    <img src="https://github.com/smadi0x86/Website-D-D-Final/actions/workflows/backend-ci.yml/badge.svg" alt="Backend CI/CD">
-  </a>
-  <a href="https://github.com/smadi0x86/Website-D-D-Final/actions/workflows/frontend-ci.yml">
-    <img src="https://github.com/smadi0x86/Website-D-D-Final/actions/workflows/frontend-ci.yml/badge.svg" alt="Frontend CI/CD">
-  </a>
-</p>
+[![Frontend CI/CD](https://github.com/smadi0x86/Fitpro-app/actions/workflows/frontend-ci.yml/badge.svg)](https://github.com/smadi0x86/Fitpro-app/actions/workflows/frontend-ci.yml)
+[![Backend CI/CD](https://github.com/smadi0x86/Fitpro-app/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/smadi0x86/Fitpro-app/actions/workflows/backend-ci.yml)
 
 ## Overview
 **FitPro is a dynamic, responsive fitness management application that bridges the gap between fitness enthusiasts and their health goals.**
