@@ -1,7 +1,7 @@
 # FitPro App - Backend and Infrastructure
 
 <div align="center">
-<img src="https://github.com/smadi0x86/Website-D-D-Final/assets/75253629/c61b4dcd-08b2-42f9-8158-4b710a5ab950">
+<img src="https://github.com/smadi0x86/Fitpro-app/assets/75253629/fbe172bd-0b59-40cf-89c2-87c8eaa814f2">
 </div>
 
 <p align="center">
